@@ -27,7 +27,6 @@ SignUp.post("/", async (req, res) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
           newUser.password = hash;
-          newProgress.save();
           newUser
             .save()
             .then((user) => res.json({ message: "Thanks for registering" }))
