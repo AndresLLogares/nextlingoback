@@ -10,12 +10,12 @@ Redirect.get("/", async (req, res) => {
 
   await User.findOne({ email: user }).then((user) => {
     if (!user) {
-      return res.redirect("http://localhost:3000/");
+      return res.redirect("https://nextlingo.vercel.app");
     } else {
       if (hash === user.hash) {
-        return res.redirect("http://localhost:3000/reset");
+        return res.redirect("https://nextlingo.vercel.app/reset");
       } else {
-        res.redirect("http://localhost:3000/");
+        res.redirect("https://nextlingo.vercel.app");
       }
     }
   });
